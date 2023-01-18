@@ -23,7 +23,7 @@ i.e.
 
 #### How to initialize/run your application (where applicable)
 
-- e.g. `npm start`
+- npm start
 
 #### How to use your library (where applicable)
 
