@@ -13,8 +13,12 @@ function sendPickup() {  // 1. vendor sends pickup for a store
   events.emit('pickup', event);
 }
 
+function acknowledgeDelivery(orderId) {
+  console.log("Vendor thank you for the delivery!", orderId);
+}
 
 function startVendor() {
+  events.on("delivered", acknowledgeDelivery);
   console.log("Vendor ready!");
 
   // Copy this pattern
