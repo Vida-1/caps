@@ -30,6 +30,8 @@ i.e.
 #### Tests
 
 - Tests run via GitHub CI upon merge to main branch.
+![phaseOne Testing](Lab11-testing.JPG)
+
 <!-- - Any tests of note?
 - Describe any tests that you did not complete, skipped, etc
 

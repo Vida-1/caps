@@ -22,10 +22,10 @@ test("Driver handlePickup", () => {
   
   // Act
   handlePickup({
-    store: "test",
+    store: "handlePickup test",
     orderId: "1234",
-    customer: "Jane Snow",
-    address: "123 Some Street",
+    customer: "Jean-Luc Picard",
+    address: "1 Chateau Picard",
   });
 
   // Timers -skip setTimeout
