@@ -1,4 +1,4 @@
-const { events, chance } = require('../eventPool');
+const { events, chance, EVENT_NAMES } = require('../eventPool');
 
 
 
@@ -10,7 +10,7 @@ function sendPickup() {  // 1. vendor sends pickup for a store
     address: chance.address(),
   };
   console.log("Vendor asking for pickup! OrderId: ", event.orderId);
-  events.emit('pickup', event);
+  events.emit(EVENT_NAMES.pickup, event);
 }
 
 function acknowledgeDelivery(orderId) {
@@ -18,7 +18,7 @@ function acknowledgeDelivery(orderId) {
 }
 
 function startVendor() {
-  events.on("delivered", acknowledgeDelivery);
+  events.on(EVENT_NAMES.delivered, acknowledgeDelivery); //event name is "delivered"
   console.log("Vendor ready!");
 
   // Copy this pattern

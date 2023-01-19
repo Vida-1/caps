@@ -5,4 +5,9 @@ const chance = require("chance")();
 
 const events = new EventEmitter();
 
-module.exports = { events, chance };
+const EVENT_NAMES = {
+  pickup: "pickup",
+  delivered: "delivered orderID:",
+}
+
+module.exports = { events, chance, EVENT_NAMES };

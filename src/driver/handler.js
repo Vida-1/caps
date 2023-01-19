@@ -1,8 +1,8 @@
-const { events, chance } = require('../eventPool');
+const { events, EVENT_NAMES, chance } = require('../eventPool');
 
 function deliver(orderId) {
   console.log("Driver finished delivery of orderId: ", orderId);
-  events.emit("delivered orderID: ", orderId);
+  events.emit(EVENT_NAMES.delivered, orderId);
 }
 
 function handlePickup(event) {
@@ -16,7 +16,11 @@ function handlePickup(event) {
 function startDriver() {
   console.log("Driver ready!");
 
-  events.on('pickup', handlePickup);
+  events.on(EVENT_NAMES.pickup, handlePickup);
 }
 
-module.exports = { startDriver };
+module.exports = {
+  startDriver, toTest: {
+    deliver,
+    handlePickup,
+}};
