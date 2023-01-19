@@ -1,7 +1,5 @@
 const { events, chance, EVENT_NAMES } = require('../eventPool');
 
-
-
 function sendPickup() {  // 1. vendor sends pickup for a store
   const event = {
     store: chance.city(),
@@ -18,7 +16,7 @@ function acknowledgeDelivery(orderId) {
 }
 
 function startVendor() {
-  events.on(EVENT_NAMES.delivered, acknowledgeDelivery); //event name is "delivered"
+  events.on(EVENT_NAMES.delivered, acknowledgeDelivery); //does this line really belong here?
   console.log("Vendor ready!");
 
   // Copy this pattern
@@ -31,4 +29,8 @@ function startVendor() {
   // The pattern
 }
 
-module.exports = { startVendor };
+module.exports = {
+  startVendor, toTest: {
+    acknowledgeDelivery,
+    sendPickup,
+}};
